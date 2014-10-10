@@ -1,4 +1,4 @@
-JS Observer Pattern
+SVG Line Animation
 ------------------
-
-Using a small control panel as the subject and clicking to create new observers. Observers should update when the control panel is changed.
+An Experiment doing SVG line animations on click events.
+Based on JS from Jake Archibald - http://jakearchibald.com/2013/animated-line-drawing-svg/
