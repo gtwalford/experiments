@@ -1,0 +1,22 @@
+{
+  "name": "Experiments",
+  "version": "0.0.1",
+  "authors": [
+    "Gabriel Walford"
+  ],
+  "description": "Place of Little Experiments and Musings",
+  "license": "MIT",
+  "homepage": "gabrielwalford.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.3"
+  }
+}
