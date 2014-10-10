@@ -6,6 +6,11 @@
 /* Ok, this is where the fun starts.
 -------------------------------------------------------------------------------*/
 
+html {
+  background: #232323;
+  min-height: 100%;
+}
+
 /* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
 body {font: 13px Helmet, Freesans, sans-serif; font-weight: lighter;}
 body, select, input, textarea {color: #333;}
@@ -16,15 +21,68 @@ h1 {
 	font-size: 200%;
 }
 
-#svg {
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-	width: 100%;
-  z-index: 1;
+.btn {
+  display: block;
+  cursor: pointer;
+  margin: 10% auto;
+  position: relative;
+  width: 25%;
 }
 
+.btn p {
+  color: #FFFFFF;
+  display: block;
+  font-family: Courier;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.25s ease;
+}
+
+.btn:hover p {
+  color: #fff200;
+}
+
+.open p {
+  display: none;
+}
+
+svg {
+  display: block;
+  position: absolute;
+  top: 10px;
+}
+
+.btn-border {
+  transition: stroke 0.25s ease;
+  display: block;
+}
+
+.btn:hover .btn-border {
+  stroke: #fff200;
+}
+
+.open .btn-border {
+  display: none;
+}
+
+.close-btn {
+  display: none;
+}
+
+.close-btn line,
+.close-btn rect {
+  transition: stroke 0.25s ease;
+}
+
+.close-btn:hover line,
+.close-btn:hover rect {
+  stroke: #fff200;
+}
+
+.open .close-btn {
+  display: block;
+}
 
 /* Media queries!
 -------------------------------------------------------------------------------*/
