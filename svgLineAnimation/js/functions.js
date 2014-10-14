@@ -6,6 +6,7 @@
 
     var $btn = $('.btn'),
         $cssBtn = $('.css-btn'),
+        $newBtn = $('.new-btn'),
         btnBorder = document.querySelector('.btn-border'),
         btnBorderLength = btnBorder.getTotalLength(),
         closeBorder = document.querySelector('.close-btn-border'),
@@ -19,7 +20,16 @@
       else {
         $cssBtn.removeClass('closed').addClass('open');
       }
+    });
 
+    $newBtn.on('click', function(){
+      if( $newBtn.hasClass('open') ){
+        $newBtn.removeClass('open').addClass('closed');
+        console.log( document.querySelector('.new-close-btn-border').getTotalLength() );
+      }
+      else {
+        $newBtn.removeClass('closed').addClass('open');
+      }
     });
 
     $btn.on('click', function(){
