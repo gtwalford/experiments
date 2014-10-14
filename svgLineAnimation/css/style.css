@@ -24,7 +24,8 @@ h1 {
 .btn {
   display: block;
   cursor: pointer;
-  margin: 10% auto;
+  margin: 5% auto;
+  min-height: 100px;
   position: relative;
   width: 25%;
 }
@@ -39,12 +40,9 @@ h1 {
   transition: color 0.25s ease;
 }
 
-.btn:hover p {
-  color: #fff200;
-}
-
+.btn:hover p,
 .open p {
-  display: none;
+  color: #fff200;
 }
 
 svg {
@@ -62,26 +60,114 @@ svg {
   stroke: #fff200;
 }
 
-.open .btn-border {
-  display: none;
-}
-
 .close-btn {
   display: none;
 }
 
-.close-btn line,
-.close-btn rect {
+.close-btn-x {
+  display: none;
+}
+
+.close-btn .close-btn-border,
+.close-btn .close-btn-x {
   transition: stroke 0.25s ease;
 }
 
-.close-btn:hover line,
-.close-btn:hover rect {
+.close-btn:hover .close-btn-border,
+.close-btn:hover .close-btn-x {
   stroke: #fff200;
 }
 
 .open .close-btn {
   display: block;
+}
+
+
+/*
+ *
+ * CSS Button Animation
+ *
+ */
+.css-btn {
+  display: block;
+  cursor: pointer;
+  margin: 5% auto;
+  min-height: 100px;
+  position: relative;
+  width: 25%;
+}
+
+.css-btn-text {
+  color: #FFFFFF;
+  display: block;
+  font-family: Courier;
+  font-size: 1.2em;
+  font-weight: bold;
+  opacity: 1;
+  text-align: center;
+  transition: opacity .5s ease, color 0.25s ease;
+}
+
+.css-btn:hover .css-btn-text {
+  color: #fff200;
+}
+
+.closed .css-btn-text {
+  transition-delay: 1s;
+}
+
+.open .css-btn-text {
+  opacity: 0;
+}
+
+svg {
+  display: block;
+  position: absolute;
+  top: 10px;
+}
+
+.css-btn-border {
+  transition: all 1s ease;
+  stroke-dasharray: 301.1678161621094 301.1678161621094;
+  stroke-dashoffset: 0;
+}
+
+.closed .css-btn-border {
+  transition-delay: 1s;
+}
+
+.open .css-btn-border {
+  stroke-dashoffset: -301.1678161621094;
+}
+
+.css-btn:hover .css-btn-border {
+  stroke: #fff200;
+}
+
+.css-close-btn-border {
+  transition: all 1s ease;
+  stroke-dasharray: 121.2001724243164 121.2001724243164;
+  stroke-dashoffset: -121.2001724243164;
+}
+
+.open .css-close-btn-border {
+  transition-delay: 1s;
+  stroke-dashoffset: 0;
+}
+
+.css-close-btn-x {
+  transition: opacity .5s ease;
+  opacity: 0;
+}
+
+.open .css-close-btn-x {
+  transition-delay: 1s;
+  opacity: 1;
+}
+
+.css-close-btn:hover .css-close-btn-border,
+.css-close-btn:hover .css-close-btn-x {
+  stroke: #fff200;
 }
 
 /* Media queries!

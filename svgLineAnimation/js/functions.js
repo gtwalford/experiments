@@ -4,36 +4,106 @@
 (function($){
   $(document).ready(function (){
 
-    var $btn = $('.btn');
+    var $btn = $('.btn'),
+        $cssBtn = $('.css-btn'),
+        btnBorder = document.querySelector('.btn-border'),
+        btnBorderLength = btnBorder.getTotalLength(),
+        closeBorder = document.querySelector('.close-btn-border'),
+        closeBorderLength = closeBorder.getTotalLength(),
+        closeX = document.querySelector('.close-x');
+
+    $cssBtn.on('click', function(){
+      if( $cssBtn.hasClass('open') ){
+        $cssBtn.removeClass('open').addClass('closed');
+      }
+      else {
+        $cssBtn.removeClass('closed').addClass('open');
+      }
+
+    });
 
     $btn.on('click', function(){
-      console.log('Click');
-      if( $btn.hasClass('open') ){
-        //$btn.removeClass('open');
-      }
-      else{
 
-        $btn.find('p').fadeOut(1000);
-        var path = document.querySelector('.btn-border');
-        var length = path.getTotalLength();
+      // If Button is Open
+      if( $btn.hasClass('open') ){
+
+        // Remove open class when closing
+
+        $btn.find('p').fadeIn(1000);
+
         // Clear any previous transition
-        path.style.transition = path.style.WebkitTransition = 'none';
+        btnBorder.style.transition = btnBorder.style.WebkitTransition = 'none';
+
+        closeBorder.style.transition = closeBorder.style.WebkitTransition = 'none';
 
         // Set up the starting positions
-        path.style.strokeDasharray = length + ' ' + length;
-        path.style.strokeDashoffset = 0;
+        btnBorder.style.strokeDasharray = btnBorderLength + ' ' + btnBorderLength;
+        btnBorder.style.strokeDashoffset = '-' + btnBorderLength;
+
+        closeBorder.style.strokeDasharray = closeBorderLength + ' ' + closeBorderLength;
+        closeBorder.style.strokeDashoffset = 0;
 
         // Trigger a layout so styles are calculated & the browser
         // picks up the starting position before animating
-        path.getBoundingClientRect();
+        btnBorder.getBoundingClientRect();
+
+        closeBorder.getBoundingClientRect();
 
         // Define our transition
-        path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 1s ease-in';
+        btnBorder.style.transition = btnBorder.style.WebkitTransition = 'stroke-dashoffset 1s ease-out';
 
-        // Go!
-        path.style.strokeDashoffset = '-'+length;
+        closeBorder.style.transition = closeBorder.style.WebkitTransition = 'stroke-dashoffset 1s ease-in';
 
+        // Go
+        closeBorder.style.strokeDashoffset = '-' + closeBorderLength;
+        $('.close-btn-x').fadeOut(500);
+
+        setTimeout( function(){
+          btnBorder.style.strokeDashoffset = 0;
+          $btn.removeClass('open');
+        }, 950);
+
+      }
+      // Otherwise if button is not Open
+      else{
+
+        // Add Class for open state
         $btn.addClass('open');
+
+        // Fade out button text
+        $btn.find('p').fadeOut(1000);
+
+        // Clear any previous transition
+        btnBorder.style.transition = btnBorder.style.WebkitTransition = 'none';
+
+        closeBorder.style.transition = closeBorder.style.WebkitTransition = 'none';
+
+        // Set up the starting positions
+        btnBorder.style.strokeDasharray = btnBorderLength + ' ' + btnBorderLength;
+        btnBorder.style.strokeDashoffset = 0;
+
+        closeBorder.style.strokeDasharray = closeBorderLength + ' ' + closeBorderLength;
+        closeBorder.style.strokeDashoffset = '-' + closeBorderLength;
+
+        // Trigger a layout so styles are calculated & the browser
+        // picks up the starting position before animating
+        btnBorder.getBoundingClientRect();
+
+        closeBorder.getBoundingClientRect();
+
+        // Define our transition
+        btnBorder.style.transition = btnBorder.style.WebkitTransition = 'stroke-dashoffset 1s ease-in';
+
+        closeBorder.style.transition = closeBorder.style.WebkitTransition = 'stroke-dashoffset 1s ease-out';
+
+        // Go
+        btnBorder.style.strokeDashoffset = '-' + btnBorderLength;
+
+        setTimeout( function(){
+          closeBorder.style.strokeDashoffset = 0;
+          $('.close-btn-x').fadeIn(500);
+        }, 950);
+
       }
     });
 
