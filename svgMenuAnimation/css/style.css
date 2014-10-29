@@ -1,0 +1,156 @@
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.chromeframe {position: absolute; top: 0;}
+
+/* Ok, this is where the fun starts.
+-------------------------------------------------------------------------------*/
+
+html {
+  background: #232323;
+  min-height: 100%;
+}
+
+/* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
+body {font: 13px Helmet, Freesans, sans-serif; font-weight: lighter;}
+body, select, input, textarea {color: #333;}
+a {color: #333;}
+a:hover {color: #666;}
+
+h1 {
+	font-size: 200%;
+}
+
+p {
+  color: #FFFFFF;
+  font-size: 125%;
+  margin: 100px auto 25px;
+  text-align: center;
+}
+
+.menuIcon1,
+.menuIcon2 {
+  display: block;
+  height: 38px;
+  margin: 10px auto;
+  width: 38px;
+}
+
+/**
+ * MENU ICON 1 
+ */
+
+.menuIcon1 .line-top,
+.menuIcon1 .line-bottom {
+  -webkit-transition: stroke-dashoffset .4s ease-in;
+  -moz-transition: stroke-dashoffset .4s ease-in;
+  -o-transition: stroke-dashoffset .4s ease-in;
+  transition: stroke-dashoffset .4s ease-in;
+  -webkit-transition-delay: .3s;
+  -moz-transition-delay: .3s;
+  -o-transition-delay: .3s;
+  transition-delay: .3s;
+  stroke-dasharray: 15.100000481469727 15.100000381469727;
+  stroke-dashoffset: 0;
+}
+
+.open .menuIcon1 .line-top,
+.open .menuIcon1 .line-bottom {
+  stroke-dashoffset: 15.100000481469727;
+  -webkit-transition: stroke-dashoffset .4s ease-out;
+  -moz-transition: stroke-dashoffset .4s ease-out;
+  -o-transition: stroke-dashoffset .4s ease-out;
+  transition: stroke-dashoffset .4s ease-out;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  transition-delay: 0;
+}
+
+.menuIcon1 .xLine1,
+.menuIcon1 .xLine2 {
+  -webkit-transition: stroke-dashoffset .4s ease-in;
+  -moz-transition: stroke-dashoffset .4s ease-in;
+  -o-transition: stroke-dashoffset .4s ease-in;
+  transition: stroke-dashoffset .4s ease-in;
+  stroke-dasharray: 15.142085800170898 15.132085800170898;
+  stroke-dashoffset: 15.142085800170898;
+}
+
+.open .menuIcon1 .xLine1,
+.open .menuIcon1 .xLine2 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset .4s ease-out;
+  -moz-transition: stroke-dashoffset .4s ease-out;
+  -o-transition: stroke-dashoffset .4s ease-out;
+  transition: stroke-dashoffset .4s ease-out;
+  -webkit-transition-delay: .3s;
+  -moz-transition-delay: .3s;
+  -o-transition-delay: .3s;
+  transition-delay: .3s;
+}
+
+/**
+ * MENU ICON 2
+ */
+
+.menuIcon2 .xLine1 {
+  transform: rotate(135deg);
+}
+
+.menuIcon2 .xLine2 {
+  transform: rotate(-135deg);
+}
+
+.menuIcon2 .xLine1,
+.menuIcon2 .xLine2 {
+  -webkit-transition: transform .3s linear, opacity .1s linear .2s;
+  -moz-transition: transform .3s linear, opacity .1s linear .2s;
+  -o-transition: transform .3s linear, opacity .1s linear .2s;
+  transition: transform .3s linear, opacity .1s linear .2s;
+  transform-origin: center center;
+  opacity: 0;
+}
+
+.open .menuIcon2 .xLine1,
+.open .menuIcon2 .xLine2 {
+  -webkit-transition: transform .3s linear .2s, opacity .1s linear .2s;
+  -moz-transition: transform .3s linear .2s, opacity .1s linear .2s;
+  -o-transition: transform .3s linear .2s, opacity .1s linear .2s;
+  transition: transform .3s linear .2s, opacity .1s linear .2s;
+  transform: rotate(0deg);
+  opacity: 1
+}
+
+.menuIcon2 .line-top,
+.menuIcon2 .line-bottom {
+  -webkit-transition: transform .2s linear .3s, opacity .1s linear .3s;
+  -moz-transition: transform .2s linear .3s, opacity .1s linear .3s;
+  -o-transition: transform .2s linear .3s, opacity .1s linear .3s;
+  transition: transform .2s linear .3s, opacity .1s linear .3s;
+  transform-origin: center center;
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+.open .menuIcon2 .line-top,
+.open .menuIcon2 .line-bottom {
+  -webkit-transition: transform .2s linear, opacity .1s linear .1s;
+  -moz-transition: transform .2s linear, opacity .1s linear .1s;
+  -o-transition: transform .2s linear, opacity .1s linear .1s;
+  transition: transform .2s linear, opacity .1s linear .1s;
+  opacity: 0;
+}
+
+.open .menuIcon2 .line-top {
+  transform: rotate(90deg);
+}
+
+.open .menuIcon2 .line-bottom {
+  transform: rotate(-90deg);
+}
+
+@media screen and (max-width: 480px) {
+	
+		
+}
