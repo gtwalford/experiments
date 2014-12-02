@@ -43,7 +43,7 @@ p {
 
 #radial path {
   stroke-dasharray: 525 525;
-  stroke-dashoffset: 0;
+  stroke-dashoffset: 525;
   -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease-out;
   transition: all 1s ease-out;
