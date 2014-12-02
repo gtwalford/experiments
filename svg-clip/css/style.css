@@ -1,0 +1,82 @@
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.chromeframe {position: absolute; top: 0;}
+
+/* Ok, this is where the fun starts.
+-------------------------------------------------------------------------------*/
+
+html {
+  background: #FFFFFF;
+  min-height: 100%;
+}
+
+/* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
+body {font: 13px Helmet, Freesans, sans-serif; font-weight: lighter;}
+body, select, input, textarea {color: #333;}
+a {color: #333;}
+a:hover {color: #666;}
+
+svg {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 500px;
+}
+
+.shapeClip {
+  -webkit-animation: movePlease 2s infinite;
+  -moz-animation: movePlease 2s infinite;
+  -o-animation: movePlease 2s infinite;
+  animation: movePlease 2s infinite;
+}
+
+@-webkit-keyframes movePlease {
+  0%,100% {transform: translateY(-90px)}
+  50% {transform: translateY(0px)}
+}
+
+@-moz-keyframes movePlease {
+  0%, 100% {transform: translateY(-90px)}
+  50% {transform: translateY(0px)}
+}
+
+@-o-keyframes movePlease {
+  0%, 100% {transform: translateY(-90px)}
+  50% {transform: translateY(0px)}
+}
+
+@keyframes movePlease {
+  0%, 100% {transform: translateY(-90px)}
+  50% {transform: translateY(0px)}
+}
+
+.letterClip {
+  -webkit-animation: movePlease 2s infinite;
+  -moz-animation: movePlease 2s infinite;
+  -o-animation: movePlease 2s infinite;
+  animation: movePlease 2s infinite;
+}
+
+@-webkit-keyframes moveLetters {
+  0% {transform: translate(-100%, -100%)}
+  100% {transform: translate(0%, 0%)}
+}
+
+@-moz-keyframes moveLetters {
+  0% {transform: translate(-100%, -100%)}
+  100% {transform: translate(0%, 0%)}
+}
+
+@-o-keyframes moveLetters {
+  0% {transform: translate(-100%, -100%)}
+  100% {transform: translate(0%, 0%)}
+}
+
+@keyframes moveLetters {
+  0% {transform: translate(-100%, -100%)}
+  100% {transform: translate(0%, 0%)}
+}
+
+@media screen and (max-width: 480px) {
+}

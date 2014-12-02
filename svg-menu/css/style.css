@@ -95,10 +95,12 @@ p {
  */
 
 .menuIcon2 .xLine1 {
+  opacity: 1;
   transform: rotate(135deg);
 }
 
 .menuIcon2 .xLine2 {
+  opacity: 1;
   transform: rotate(-135deg);
 }
 
@@ -109,17 +111,17 @@ p {
   -o-transition: transform .3s linear, opacity .1s linear .2s;
   transition: transform .3s linear, opacity .1s linear .2s;
   transform-origin: center center;
-  opacity: 0;
+  /*opacity: 1;*/
 }
 
 .open .menuIcon2 .xLine1,
 .open .menuIcon2 .xLine2 {
-  -webkit-transition: transform .3s linear .2s, opacity .1s linear .2s;
-  -moz-transition: transform .3s linear .2s, opacity .1s linear .2s;
-  -o-transition: transform .3s linear .2s, opacity .1s linear .2s;
-  transition: transform .3s linear .2s, opacity .1s linear .2s;
+  -webkit-transition: transform .5s ease-in-out .2s, opacity .1s linear .2s;
+  -moz-transition: transform .5s ease-in-out .2s, opacity .1s linear .2s;
+  -o-transition: transform .5s ease-in-out .2s, opacity .1s linear .2s;
+  transition: transform .5s ease-in-out .2s, opacity .1s linear .2s;
   transform: rotate(0deg);
-  opacity: 1
+  /*opacity: 1*/
 }
 
 .menuIcon2 .line-top,
@@ -130,7 +132,7 @@ p {
   transition: transform .2s linear .3s, opacity .1s linear .3s;
   transform-origin: center center;
   transform: rotate(0deg);
-  opacity: 1;
+  opacity: 0;
 }
 
 .open .menuIcon2 .line-top,
